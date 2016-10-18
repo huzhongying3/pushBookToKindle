@@ -14,7 +14,7 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created by huzhx_000 on 2016/10/16.
+ * Created by huzhx_000 on 22016/10/16.
  */
 @Configuration
 public class AppConfig {
