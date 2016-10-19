@@ -7,6 +7,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import java.io.*;
 import java.util.Map;
@@ -33,5 +34,16 @@ public class AppConfig {
             e.printStackTrace();
         }
         return null;
+    }
+    @Bean
+    public FreeMarkerViewResolver viewResolver(){
+        FreeMarkerViewResolver freeMarkerViewResolver = new FreeMarkerViewResolver();
+        freeMarkerViewResolver.setViewClass(org.springframework.web.servlet.view.freemarker.FreeMarkerView.class);
+        freeMarkerViewResolver.setContentType("text/html;charset=utf-8");
+        freeMarkerViewResolver.setCache(true);
+        freeMarkerViewResolver.setSuffix(".ftl");
+        freeMarkerViewResolver.setOrder(0);
+        freeMarkerViewResolver.setRequestContextAttribute("request");
+        return  freeMarkerViewResolver;
     }
 }
