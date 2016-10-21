@@ -83,7 +83,7 @@ public class BooksService {
         String bookURL = voMap.get("bookURL");
         JSONObject jsonObject = new JSONObject();
 
-        String pathname = "d:" + File.separatorChar + "books" + File.separatorChar + bookName + ".txt";
+        String pathname = "/books" + File.separatorChar + bookName + ".txt";
         httpDownload(bookURL, pathname,jsonObject);
         return jsonObject.toString();
 
