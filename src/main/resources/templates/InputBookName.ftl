@@ -35,11 +35,28 @@
                             async: false,
                             contentType:'application/json',
                             success: function (data) {
-                                if(result.result==0){
-                                    alert("发送成功");
+                                if(data.result==1||data.result==0){
+                                    alert("下载成功,开始发送");
+                                    $.ajax({
+                                        url: "${path}/service/sendBook",
+                                        data: JSON.stringify({"bookURL":bookURL,"kindleMail":kindleMail,"bookName":bookName,"filepath":data.filepath}),
+                                        type: 'post',
+                                        dataType: 'json',
+                                        async: false,
+                                        contentType:'application/json',
+                                        success: function (data) {
+                                            if(data.result==1||data.result==0){
+                                                alert("发送成功");
 
-                                }else {
-                                    alert("发送失败");
+                                            }else{
+                                                alert("发送失败");
+                                            }
+
+                                        }
+                                    });
+
+                                }else{
+                                    alert("下载失败");
                                 }
 
                             }

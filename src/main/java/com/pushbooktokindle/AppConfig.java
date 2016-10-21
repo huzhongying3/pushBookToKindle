@@ -1,16 +1,11 @@
 package com.pushbooktokindle;
 
-import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.core.io.PathResource;
-import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import java.io.*;
-import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -45,5 +40,17 @@ public class AppConfig {
         freeMarkerViewResolver.setOrder(0);
         freeMarkerViewResolver.setRequestContextAttribute("request");
         return  freeMarkerViewResolver;
+    }
+
+    @Bean
+    public JavaMailSenderImpl sender(){
+        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
+        javaMailSender.setHost("smtp.163.com");
+        javaMailSender.setUsername("huzhongying3@163.com");
+        javaMailSender.setPassword("xk53fdab1991");
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        javaMailSender.setJavaMailProperties(props);
+        return  javaMailSender;
     }
 }
