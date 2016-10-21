@@ -79,6 +79,13 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.18</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.github.axet</groupId>
+			<artifactId>wget</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -126,5 +133,4 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
 </project>
