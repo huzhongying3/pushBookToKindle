@@ -45,9 +45,9 @@ public class AppConfig {
     @Bean
     public JavaMailSenderImpl sender(){
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-        javaMailSender.setHost("smtp.sohu.com");
-        javaMailSender.setUsername("huzhongying3@sohu.com");
-        javaMailSender.setPassword("xk53fdab");
+        javaMailSender.setHost("smtp.gmail.com");
+        javaMailSender.setUsername("huzhongying3@gmail.com");
+        javaMailSender.setPassword("xk53fdab1991");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         javaMailSender.setJavaMailProperties(props);
