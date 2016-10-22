@@ -45,8 +45,8 @@ public class AppConfig {
     @Bean
     public JavaMailSenderImpl sender(){
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-        javaMailSender.setHost("smtp.163.com");
-        javaMailSender.setUsername("huzhongying3@163.com");
+        javaMailSender.setHost("smtp.mail.yahoo.com");
+        javaMailSender.setUsername("huzhongying3@yahoo.com");
         javaMailSender.setPassword("xk53fdab1991");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
