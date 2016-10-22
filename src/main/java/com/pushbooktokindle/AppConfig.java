@@ -50,6 +50,7 @@ public class AppConfig {
         javaMailSender.setPassword("xk53fdab1991");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         javaMailSender.setJavaMailProperties(props);
         return  javaMailSender;
     }
