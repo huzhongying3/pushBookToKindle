@@ -46,8 +46,8 @@ public class AppConfig {
     public JavaMailSenderImpl sender(){
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         javaMailSender.setHost("smtp.sohu.com");
-        javaMailSender.setUsername("huzhongying3");
-        javaMailSender.setPassword("xk53fdab1991");
+        javaMailSender.setUsername("huzhongying3@sohu.com");
+        javaMailSender.setPassword("xk53fdab");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         javaMailSender.setJavaMailProperties(props);
